@@ -15,12 +15,24 @@ app.use(morgan('dev'))
 
 //Routes go here
 import handlerFunctions from './controller.js'
-const {} = handlerFunctions
+const {getStudents, addStudent, deleteStudent, editStudent, getGroups, addGroup, deleteGroup, editGroup, getUngroups, addUngroup, deleteUngroup, editUngroup} = handlerFunctions
 
-app.get()
-app.post()
-app.delete()
-app.put()
+app.get('/students', getStudents)
+app.post('/student', addStudent)
+app.delete('/student/:studentId', deleteStudent)
+app.put('/student/:studentId', editStudent)
+app.get('/groups', getGroups)
+app.post('/group', addGroup)
+app.delete('/group/:groupId', deleteGroup)
+app.put('/group/:groupId', editGroup)
+app.get('/ungroups', getUngroups)
+app.post('/ungroup', addUngroup)
+app.delete('/ungroup/:ungroupId', deleteUngroup)
+app.put('/ungroup/:ungroupId', editUngroup)
+// app.get('/seatingcharts', getSeatingCharts)
+// app.post('/seatingchart', addSeatingChart)
+// app.delete('/seatingchart/:scId', deleteSeatingChart)
+// app.put('/seatingchart/:scId', editSeatingChart)
 
 //Open door to server
 ViteExpress.listen(app, 2319, () => console.log(`We've got a 2319! Report to http://localhost:2319`))
