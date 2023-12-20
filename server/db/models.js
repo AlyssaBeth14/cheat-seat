@@ -57,7 +57,7 @@ Ungroup.init (
             primaryKey: true
         },
         ungroupName: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING(30),
             allowNull: false,
             unique: true
         }
@@ -66,24 +66,98 @@ Ungroup.init (
     }
 )
 
+class StudentGroup extends Model {}
 
-Student.belongsToMany(Group, {foreignKey: 'groupId'})
-Group.hasMany(Student, {foreignKey: 'groupId'})
+StudentGroup.init (
+    {
+        sgId: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            allowNull: false,
+            primaryKey: true
+        },
+        studentId: {
+            type: DataTypes.INTEGER,
+            foreignKey: true,
+            allowNull: false
+        },
+        studentName: {
+            type: DataTypes.STRING(30),
+            allowNull: false,
+            unique: true
+        },
+        groupId: {
+            type: DataTypes.INTEGER,
+            foreignKey: true,
+            allowNull: false
+        },
+        level: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        notes: {
+            type: DataTypes.TEXT,
+            allowNull: true
+        }
+    }, {
+        sequelize: db
+    }
+)
 
-Group.belongsToMany(Student, {foreignKey: 'studentId'})
-Student.hasMany(Group, {foreignKey: 'studentId'})
+class StudentUngroup extends Model {}
 
-Student.belongsToMany(Ungroup, {foreignKey: 'ungroupId'})
-Ungroup.hasMany(Student, {foreignKey: 'ungroupId'})
+StudentUngroup.init (
+    {
+        suId: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            allowNull: false,
+            primaryKey: true
+        },
+        studentId: {
+            type: DataTypes.INTEGER,
+            foreignKey: true,
+            allowNull: false
+        },
+        studentName: {
+            type: DataTypes.STRING(30),
+            allowNull: false,
+            unique: true
+        },
+        ungroupId: {
+            type: DataTypes.INTEGER,
+            foreignKey: true,
+            allowNull: false
+        },
+        included: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        }
+    }, {
+        sequelize: db
+    }
+)
 
-Ungroup.belongsToMany(Student, {foreignKey: 'studentId'})
-Student.hasMany(Ungroup, {foreignKey: 'studentId'})
+
+
+
+Student.belongsToMany(Group, {through: 'StudentGroup'})
+// Group.hasMany(Student, {foreignKey: 'groupId'})
+
+Group.belongsToMany(Student, {through: 'StudentGroup'})
+// Student.hasMany(Group, {foreignKey: 'studentId'})
+
+Student.belongsToMany(Ungroup, {through: 'StudentUngroup'})
+// Ungroup.hasMany(Student, {foreignKey: 'ungroupId'})
+
+Ungroup.belongsToMany(Student, {through: 'StudentUngroup'})
+// Student.hasMany(Ungroup, {foreignKey: 'studentId'})
 
 
 if (process.argv[1] === url.fileURLToPath(import.meta.url)) {
     console.log('Syncing database...');
-    await db.sync()
+    await db.sync({force: true})
     console.log('Finished syncing database!');
 }
 
-export {Student, Group, Ungroup}
+export {Student, Group, Ungroup, StudentGroup, StudentUngroup}

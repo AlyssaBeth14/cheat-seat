@@ -6,6 +6,7 @@ const GroupChart = (props) => {
     <div>GroupChart</div>
     <GroupHeader />
     <GroupStudentList />
+    <EditButton />
     <SaveButton />
     </body>
   )
