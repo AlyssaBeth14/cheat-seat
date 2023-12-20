@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
-import { Student } from '../../../server/db/models.jsx'
+import StudentRow from './StudentRow.jsx'
+import MasterListHeader from './MasterListHeader.jsx'
+import AddStudent from './AddStudent.jsx'
 
 const MasterListDisplay = (props) => {
 
@@ -39,7 +41,7 @@ const MasterListDisplay = (props) => {
     })
   }
 
-  const students = currentData.map((el) => <Student 
+  const students = currentData.map((el) => <StudentRow 
   initialStudentData={el}
   initialEditMode={false}
   key={el.studentId}
@@ -49,21 +51,19 @@ const MasterListDisplay = (props) => {
   />)
 
   return (
-    <body>
     <div>
+    <table>
+      <thead>
         <MasterListHeader />
+     </thead>
+     <tbody>
+      {students}
+     </tbody>
+     <tfoot>
+      <AddStudent addStudent={addStudent} />
+     </tfoot>
+    </table>
     </div>
-    <div>
-       <col>{studentId}</col>
-       <col>{studentName}</col>
-       {/* <col>{level}</col> */}
-   </div>
-   <div>
-       <button>Edit Students</button>
-       <button addStudent={addStudent}>Add Student</button>
-       <button deleteStudent={deleteStudent}>Delete Students</button>
-   </div>
-   </body>
   )
 }
 

@@ -141,16 +141,16 @@ StudentUngroup.init (
 
 
 
-Student.belongsToMany(Group, {through: 'StudentGroup'})
+Student.belongsToMany(Group, {through: {model: StudentGroup}, foreignKey: 'groupId'})
 // Group.hasMany(Student, {foreignKey: 'groupId'})
 
-Group.belongsToMany(Student, {through: 'StudentGroup'})
+Group.belongsToMany(Student, {through: {model: StudentGroup}, foreignKey: 'studentId'})
 // Student.hasMany(Group, {foreignKey: 'studentId'})
 
-Student.belongsToMany(Ungroup, {through: 'StudentUngroup'})
+Student.belongsToMany(Ungroup, {through: {model: StudentUngroup}, foreignKey: 'ungroupId'})
 // Ungroup.hasMany(Student, {foreignKey: 'ungroupId'})
 
-Ungroup.belongsToMany(Student, {through: 'StudentUngroup'})
+Ungroup.belongsToMany(Student, {through: {model: StudentUngroup}, foreignKey: 'studentId'})
 // Student.hasMany(Ungroup, {foreignKey: 'studentId'})
 
 

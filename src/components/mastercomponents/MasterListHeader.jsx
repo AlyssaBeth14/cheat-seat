@@ -1,12 +1,16 @@
 import React from 'react'
 
 const MasterListHeader = (props) => {
+
+  const {groupName} = props
+  
   return (
-    <div>
-        <col>#</col>
-        <col>Name</col>
-        <col>{groupName}</col>
-    </div>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>{groupName}</th>
+        <th></th>
+    </tr>
  
   )
 }

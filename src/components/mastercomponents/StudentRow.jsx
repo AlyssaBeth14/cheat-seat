@@ -1,4 +1,8 @@
 import React from 'react'
+import {useState} from 'react'
+import StudentId from './StudentId.jsx'
+import StudentName from './StudentName.jsx'
+import StudentLevel from './StudentLevel.jsx'
 
 const Student = () => {
  const {initialStudentData, initialEditMode, deleteStudent, currentData, setCurrentData} = props
@@ -10,6 +14,7 @@ const Student = () => {
  const changeEditMode = () => setIsEditing(true)
  const changeNormalMode = () => {
     const bodyObj = {
+
         studentId,
         studentName,
         level
@@ -26,7 +31,30 @@ const Student = () => {
  }
 
     return (
-    <div>Student</div>
+    // <div>Student</div>
+    <body>
+        <StudentId 
+        isEditing={editMode}
+        value={studentId}
+        onIdChange={setStudentId}
+        />
+        <StudentName 
+        isEditing={editMode}
+        value={studentName}
+        onNameChange={setStudentName}
+        />
+        <StudentLevel 
+        isEditing={editMode}
+        value={level}
+        onLevelChange={setLevel}
+        />
+        <ModeButtons 
+        isEditing={editMode}
+        changeEditMode={changeEditMode}
+        changeNormalMode={changeNormalMode}
+        deleteStudent={deleteStudent}
+        />
+    </body>
   )
 }
 
