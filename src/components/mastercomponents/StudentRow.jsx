@@ -3,8 +3,9 @@ import {useState} from 'react'
 import StudentId from './StudentId.jsx'
 import StudentName from './StudentName.jsx'
 import StudentLevel from './StudentLevel.jsx'
+import ModeButtons from './ModeButtons.jsx'
 
-const Student = () => {
+const Student = (props) => {
  const {initialStudentData, initialEditMode, deleteStudent, currentData, setCurrentData} = props
  const [editMode, setIsEditing] = useState(initialEditMode)
  const [studentId, setStudentId] = useState(initialStudentData.studentId)

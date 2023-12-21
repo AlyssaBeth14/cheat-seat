@@ -4,7 +4,7 @@ import './App.css'
 
 function App() {
 
-  return <MasterListDisplay />
+  return  <MasterListDisplay />
 }
 
 export default App

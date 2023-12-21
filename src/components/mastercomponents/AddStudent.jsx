@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddStudent = () => {
+const AddStudent = (props) => {
 
 const {addStudent} = props
 

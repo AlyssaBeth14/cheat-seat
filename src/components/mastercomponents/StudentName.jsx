@@ -19,5 +19,3 @@ const StudentName = (props) => {
 }
 
 export default StudentName
-
-onNameChange

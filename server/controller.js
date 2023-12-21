@@ -69,7 +69,7 @@ const handlerFunctions = {
         res.send(groups)
     }, 
     getUngroups: async (req, res) => {
-        const ungroups = Ungroup.findAll()
+        const ungroups = await Ungroup.findAll()
         res.send(ungroups)
     }, 
     addUngroup: async (req, res) => {

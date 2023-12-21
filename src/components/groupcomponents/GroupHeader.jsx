@@ -1,13 +1,14 @@
 import React from 'react'
 
-const GroupHeader = (props) => {
+const GroupHeader = () => {
+
   return (
-    <body>
-        <div>#</div>
-        <div>Name</div>
-        <div>Level</div>
-        <div>Notes</div>
-    </body>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Level</th>
+        <th>Notes</th>
+    </tr>
   )
 }
 

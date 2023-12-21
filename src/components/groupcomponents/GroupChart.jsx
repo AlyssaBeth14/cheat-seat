@@ -1,14 +1,23 @@
 import React from 'react'
+import GroupHeader from './GroupHeader.jsx'
+import GroupStudentRow from './GroupStudentRow.jsx'
+import ModeButtons from '../mastercomponents/ModeButtons.jsx'
 
-const GroupChart = (props) => {
+const GroupChart = () => {
   return (
-    <body>
-    <div>GroupChart</div>
-    <GroupHeader />
-    <GroupStudentList />
-    <EditButton />
-    <SaveButton />
-    </body>
+    <div>
+      <table>
+        <thead>
+          <GroupHeader />
+        </thead>
+        <tbody>
+         <GroupStudentRow />
+        </tbody>
+        <tfoot>
+          <ModeButtons />
+        </tfoot>  
+      </table>
+    </div>
   )
 }
 
