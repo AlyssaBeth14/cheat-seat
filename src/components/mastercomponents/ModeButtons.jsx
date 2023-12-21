@@ -3,15 +3,15 @@ import React from 'react'
 const ModeButtons = (props) => {
     const {isEditing, changeEditMode, changeNormalMode, deleteStudent} = props
     if(isEditing){
-        return <div>
+        return <td>
             <button onClick={changeNormalMode}>Save</button>
-        </div>
+        </td>
     } else {
         return (
-            <div>
+            <td>
             <button onClick={changeEditMode}>Edit</button>
             <button onClick={deleteStudent}>Delete</button>
-            </div>
+            </td>
         )
     }
 }

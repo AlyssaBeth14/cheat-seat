@@ -2,7 +2,7 @@ import React from 'react'
 
 const Notes = (props) => {
   return (
-    <div>{notes}</div>
+    <div>notes</div>
   )
 }
 

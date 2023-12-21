@@ -12,13 +12,12 @@ Student.init (
     {
         studentId: {
             type: DataTypes.INTEGER,
-            autoIncrement: false,
+            autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },
         studentName: {
             type: DataTypes.STRING(30),
-            allowNull: false,
             unique: true
         }
     }, {
@@ -93,7 +92,8 @@ StudentGroup.init (
         },
         level: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            defaultValue: 1
         },
         notes: {
             type: DataTypes.TEXT,

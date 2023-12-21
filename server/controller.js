@@ -7,9 +7,8 @@ const handlerFunctions = {
         res.send(students)
     },
     addStudent: async (req, res) => {
-        const {studentId, studentName} = req.body
+        const {studentName} = req.body
         const newStudent = {
-            studentId: studentId,
             studentName: studentName
         }
         await Student.create(newStudent)

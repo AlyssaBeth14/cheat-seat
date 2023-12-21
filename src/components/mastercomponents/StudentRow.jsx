@@ -4,6 +4,7 @@ import StudentId from './StudentId.jsx'
 import StudentName from './StudentName.jsx'
 import StudentLevel from './StudentLevel.jsx'
 import ModeButtons from './ModeButtons.jsx'
+import axios from 'axios'
 
 const Student = (props) => {
  const {initialStudentData, initialEditMode, deleteStudent, currentData, setCurrentData} = props
@@ -36,9 +37,7 @@ const Student = (props) => {
     // <div>Student</div>
     <tr>
         <StudentId 
-        isEditing={editMode}
         value={studentId}
-        onIdChange={setStudentId}
         />
         <StudentName 
         isEditing={editMode}

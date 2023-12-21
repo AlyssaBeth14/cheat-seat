@@ -4,10 +4,12 @@ import StudentRow from './StudentRow.jsx'
 import MasterListHeader from './MasterListHeader.jsx'
 import AddStudent from './AddStudent.jsx'
 import { useState, useEffect } from 'react'
+import Notes from '../groupcomponents/Notes.jsx'
 
 const MasterListDisplay = (props) => {
 
   const [currentData, setCurrentData] = useState([])
+  const [notes, setNotes] = useState(true)
 
   useEffect(() => {
     axios.get('/students')
@@ -20,7 +22,12 @@ const MasterListDisplay = (props) => {
     })
   }, [])
 
+  const showNotes = () => {
+    setNotes(!notes)
+  }
+
   const addStudent = () => {
+    console.log('function hit');
     axios.post('/student')
     .then((res) => {
       console.log(res.data);
@@ -59,9 +66,11 @@ const MasterListDisplay = (props) => {
      </thead>
      <tbody>
       {students}
+      {notes && <Notes />}
+      <button onClick={showNotes}>toggle</button>
      </tbody>
      <tfoot>
-      <AddStudent addStudent={addStudent} />
+        <AddStudent addStudent={addStudent} />
      </tfoot>
     </table>
     </div>
