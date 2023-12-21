@@ -40,8 +40,7 @@ const handlerFunctions = {
         res.send(groups)
     },
     addGroup: async (req, res) => {
-        const {groupId} = req.params
-        const {groupName} = req.body
+        const {groupId, groupName} = req.body
         const newGroup = {
             groupId: groupId,
             groupName: groupName
@@ -74,8 +73,7 @@ const handlerFunctions = {
         res.send(ungroups)
     }, 
     addUngroup: async (req, res) => {
-        const {ungroupId} = req.params
-        const {ungroupName} = req.body
+        const {ungroupId, ungroupName} = req.body
         const newUngroup = {
             ungroupId: ungroupId,
             ungroupName: ungroupName

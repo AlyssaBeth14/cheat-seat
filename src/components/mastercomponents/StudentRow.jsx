@@ -10,6 +10,7 @@ const Student = () => {
  const [studentId, setStudentId] = useState(initialStudentData.studentId)
  const [studentName, setStudentName] = useState(initialStudentData.studentName)
  const [level, setLevel] = useState(initialStudentData.level)
+ const [notes, setNotes] = useState(initialStudentData.notes)
 
  const changeEditMode = () => setIsEditing(true)
  const changeNormalMode = () => {
@@ -32,7 +33,7 @@ const Student = () => {
 
     return (
     // <div>Student</div>
-    <body>
+    <tr>
         <StudentId 
         isEditing={editMode}
         value={studentId}
@@ -54,7 +55,7 @@ const Student = () => {
         changeNormalMode={changeNormalMode}
         deleteStudent={deleteStudent}
         />
-    </body>
+    </tr>
   )
 }
 
