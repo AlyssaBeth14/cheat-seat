@@ -1,5 +1,7 @@
 import React from 'react'
 import Groups from './Groups.jsx'
+import {useState, useEffect} from 'react'
+import axios from 'axios'
 
 const GroupDisplay = (props) => {
   const [currentData, setCurrentData] = useState([])
@@ -13,7 +15,7 @@ const GroupDisplay = (props) => {
     .catch((err) => {
       console.log(err);
     })
-  })
+  }, [])
 
   const addGroup = () => {
     axios.post('/group')
@@ -30,7 +32,7 @@ const GroupDisplay = (props) => {
   return (
     <body>
     <div><Groups /></div>
-    <button addGroup={addGroup}>Add Group</button>
+    {/* <button addGroup={addGroup}>Add Group</button> */}
     </body>
   )
 }

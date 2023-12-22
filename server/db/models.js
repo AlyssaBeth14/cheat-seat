@@ -141,17 +141,10 @@ StudentUngroup.init (
 
 
 
-Student.belongsToMany(Group, {through: {model: StudentGroup}, foreignKey: 'groupId'})
-// Group.hasMany(Student, {foreignKey: 'groupId'})
-
-Group.belongsToMany(Student, {through: {model: StudentGroup}, foreignKey: 'studentId'})
-// Student.hasMany(Group, {foreignKey: 'studentId'})
-
-Student.belongsToMany(Ungroup, {through: {model: StudentUngroup}, foreignKey: 'ungroupId'})
-// Ungroup.hasMany(Student, {foreignKey: 'ungroupId'})
-
-Ungroup.belongsToMany(Student, {through: {model: StudentUngroup}, foreignKey: 'studentId'})
-// Student.hasMany(Ungroup, {foreignKey: 'studentId'})
+Student.belongsToMany(Group, {through: 'StudentGroup', foreignKey: 'groupId'})
+Group.belongsToMany(Student, {through: 'StudentGroup', foreignKey: 'studentId'})
+Student.belongsToMany(Ungroup, {through: 'StudentUngroup', foreignKey: 'ungroupId'})
+Ungroup.belongsToMany(Student, {through: 'StudentUngroup', foreignKey: 'studentId'})
 
 
 if (process.argv[1] === url.fileURLToPath(import.meta.url)) {

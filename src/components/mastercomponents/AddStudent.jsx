@@ -8,7 +8,7 @@ const {addStudent} = props
     <tr>
       <td>
         <button onClick={addStudent}>Add Student</button>
-      </td>
+        </td>
     </tr>
   )
 }

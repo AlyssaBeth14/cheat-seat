@@ -66,8 +66,8 @@ const MasterListDisplay = (props) => {
      </thead>
      <tbody>
       {students}
-      {notes && <Notes />}
-      <button onClick={showNotes}>toggle</button>
+      {/* {notes && <Notes />}
+      <button onClick={showNotes}>toggle</button> */}
      </tbody>
      <tfoot>
         <AddStudent addStudent={addStudent} />

@@ -1,4 +1,6 @@
 import React from 'react'
+import {useState, useEffect} from 'react'
+import axios from 'axios'
 
 const Groups = (props) => {
 
@@ -13,7 +15,7 @@ const Groups = (props) => {
     .catch((err) => {
       console.log(err);
     })
-  })
+  }, [])
 
   const deleteGroup = (groupId) => {
     axios.delete(`/group/${groupId}`)
@@ -28,9 +30,9 @@ const Groups = (props) => {
 
   return (
     <body>
-    <div>{groupName}</div>
+    {/* <div>{groupName}</div> */}
     <button>Edit</button>
-    <button deleteGroup={deleteGroup}>Delete</button>
+    {/* <button deleteGroup={deleteGroup}>Delete</button> */}
     </body>
   )
 }

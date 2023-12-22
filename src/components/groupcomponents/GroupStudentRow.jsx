@@ -7,7 +7,7 @@ import Student from '../mastercomponents/StudentRow.jsx'
 
 const GroupStudentRow = (props) => {
 
-  const {isEditing, editMode, setStudentId, setStudentName, onIdChange, onNameChange, onLevelChange, setLevel} = props
+  const {isEditing, editMode, setStudentId, setStudentName, onIdChange, onNameChange, onLevelChange, setLevel, studentId, studentName, level, notes} = props
   return (
     <tr>
         <StudentId 
@@ -20,15 +20,15 @@ const GroupStudentRow = (props) => {
         value={studentName}
         onNameChange={setStudentName}
         />
-        <StudentLevel 
+        {/* <StudentLevel 
         isEditing={editMode}
         value={level}
-        onLevelChange={setLevel}/>       
-        <Notes 
+        onLevelChange={setLevel}/>        */}
+        {/* <Notes 
         isEditing={editMode}
         value={notes}
-        onNotesChange={setNotes}
-        />      
+        onNotesChange={setNotes} */}
+        {/* />       */}
     </tr>
   )
 }
