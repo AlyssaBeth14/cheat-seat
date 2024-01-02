@@ -14,7 +14,7 @@ function App() {
   </header>
   <body>
   <MasterListDisplay />
-  {/* <GroupChart /> */}
+  <GroupChart />
   {/* <GroupDisplay /> */}
   </body>
   </>

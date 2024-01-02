@@ -3,7 +3,6 @@ import StudentId from '../mastercomponents/StudentId.jsx'
 import StudentName from '../mastercomponents/StudentName.jsx'
 import StudentLevel from '../mastercomponents/StudentLevel.jsx'
 import Notes from './Notes.jsx'
-import Student from '../mastercomponents/StudentRow.jsx'
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 
@@ -11,7 +10,6 @@ const GroupStudentRow = (props) => {
 
   const {initialStudentData, initialEditMode, currentData, setCurrentData} = props
   const [editMode, setIsEditing] = useState(initialEditMode)
-  // const [studentId, setStudentId] = useState(initialStudentData.studentId)
   const [studentName, setStudentName] = useState(initialStudentData.studentName)
   const [level, setLevel] = useState(initialStudentData.level)
   const [notes, setNotes] = useState(initialStudentData.notes)
@@ -40,7 +38,7 @@ const GroupStudentRow = (props) => {
   return (
     <tr>
         <StudentId 
-        value={studentId}
+        studentId={props.rowNum}
         />
         <StudentName 
         isEditing={editMode}

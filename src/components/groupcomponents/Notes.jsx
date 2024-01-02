@@ -1,8 +1,19 @@
 import React from 'react'
 
 const Notes = (props) => {
-  return (
-    <div>notes</div>
+  const {isEditing, value, onNotesChange} = props
+  
+  return isEditing ? (
+    <td>
+    <input type='text'
+    value={value}
+    onChange={(e) => onNotesChange(e.target.value)}
+    />
+    </td>
+  ) : (
+    <td>
+      {value}
+    </td>
   )
 }
 

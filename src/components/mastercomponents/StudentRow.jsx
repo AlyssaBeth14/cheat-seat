@@ -9,10 +9,9 @@ import axios from 'axios'
 const Student = (props) => {
  const {initialStudentData, initialEditMode, deleteStudent, currentData, setCurrentData} = props
  const [editMode, setIsEditing] = useState(initialEditMode)
- const [studentId, setStudentId] = useState(initialStudentData.studentId)
  const [studentName, setStudentName] = useState(initialStudentData.studentName)
  const [level, setLevel] = useState(initialStudentData.level)
-
+const {studentId} = initialStudentData
 
  const changeEditMode = () => setIsEditing(true)
  const changeNormalMode = () => {
@@ -34,10 +33,9 @@ const Student = (props) => {
  }
 
     return (
-    // <div>Student</div>
     <tr>
         <StudentId 
-        value={props.rowNum}
+        studentId={props.rowNum}
         />
         <StudentName 
         isEditing={editMode}
