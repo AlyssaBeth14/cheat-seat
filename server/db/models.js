@@ -39,15 +39,6 @@ Group.init (
             type: DataTypes.STRING(50),
             allowNull: false,
             unique: true
-        },
-        level: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 1
-        },
-        notes: {
-            type: DataTypes.TEXT,
-            allowNull: true
         }
     }, {
         sequelize: db
@@ -78,11 +69,73 @@ Ungroup.init (
     }
 )
 
+class StudentGroup extends Model {} 
 
-Student.belongsToMany(Group, {through: 'StudentGroup'})
-Group.belongsToMany(Student, {through: 'StudentGroup'})
-Student.belongsToMany(Ungroup, {through: 'StudentUngroup'})
-Ungroup.belongsToMany(Student, {through: 'StudentUngroup'})
+StudentGroup.init (
+    {
+        sgId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        studentId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            foreignKey: true,
+        },
+        groupId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            foreignKey: true
+        },
+        level: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 1
+        },
+        notes: {
+            type: DataTypes.TEXT,
+            allowNull: true
+        }
+    }, {
+        sequelize: db
+    }
+)
+class StudentUngroup extends Model {} 
+
+StudentUngroup.init (
+    {
+        suId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        studentId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            foreignKey: true,
+        },
+        ungroupId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            foreignKey: true
+        },
+        included: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        }
+    }, {
+        sequelize: db
+    }
+)
+
+
+Student.belongsToMany(Group, {through: 'StudentGroup', foreignKey: 'studentId'})
+Group.belongsToMany(Student, {through: 'StudentGroup', foreignKey: 'groupId'})
+Student.belongsToMany(Ungroup, {through: 'StudentUngroup', foreignKey: 'studentId'})
+Ungroup.belongsToMany(Student, {through: 'StudentUngroup', foreignKey: 'ungroupId'})
 
 
 if (process.argv[1] === url.fileURLToPath(import.meta.url)) {

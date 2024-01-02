@@ -35,7 +35,7 @@ const handlerFunctions = {
         res.send(students)
     },
     getGroups: async (req, res) => {
-        const groups = await Group.findAll()
+        const groups = await Group.findAll({include: Student})
         res.send(groups)
     },
     addGroup: async (req, res) => {
@@ -68,7 +68,7 @@ const handlerFunctions = {
         res.send(groups)
     }, 
     getUngroups: async (req, res) => {
-        const ungroups = await Ungroup.findAll()
+        const ungroups = await Ungroup.findAll({include: Student})
         res.send(ungroups)
     }, 
     addUngroup: async (req, res) => {
