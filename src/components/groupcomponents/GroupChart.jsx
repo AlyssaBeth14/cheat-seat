@@ -38,10 +38,7 @@ setCurrentData={setCurrentData}
         </thead>
         <tbody>
          {students}
-        </tbody>
-        <tfoot>
-          {/* <ModeButtons /> */}
-        </tfoot>  
+        </tbody> 
       </table>
     </div>
   )

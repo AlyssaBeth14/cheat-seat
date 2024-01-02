@@ -2,11 +2,11 @@ import React from 'react'
 
 const UngroupHeader = () => {
   return (
-    <body>
-    <div>#</div>
-    <div>Name</div>
-    <div>Include</div>
-    </body>
+    <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Include:</th>
+    </tr>
   )
 }
 

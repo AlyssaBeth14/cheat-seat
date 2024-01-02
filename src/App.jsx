@@ -2,6 +2,7 @@ import GroupDisplay from './components/groupcomponents/GroupDisplay.jsx'
 import MasterListDisplay from './components/mastercomponents/MasterListDisplay.jsx'
 import GroupChart from './components/groupcomponents/GroupChart.jsx'
 import Header from './components/main/Header.jsx'
+import UngroupChart from './components/ungroupcomponents/UngroupChart.jsx'
 
 import './App.css'
 
@@ -16,6 +17,7 @@ function App() {
   <MasterListDisplay />
   <GroupChart />
   {/* <GroupDisplay /> */}
+  <UngroupChart />
   </body>
   </>
   )

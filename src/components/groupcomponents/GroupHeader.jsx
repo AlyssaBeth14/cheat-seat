@@ -8,6 +8,7 @@ const GroupHeader = () => {
         <th>Name</th>
         <th>Level</th>
         <th>Notes</th>
+        <th></th>
     </tr>
   )
 }
