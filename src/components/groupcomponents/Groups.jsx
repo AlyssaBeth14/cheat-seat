@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import GroupStudentRow from './GroupStudentRow.jsx'
 
 const Groups = (props) => {
 
@@ -27,6 +28,10 @@ const Groups = (props) => {
       console.log(err);
     })
   }
+
+  const groups = currentData.map((el) => 
+  <GroupStudentRow />
+  )
 
   return (
     <body>

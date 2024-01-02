@@ -49,7 +49,8 @@ const MasterListDisplay = (props) => {
     })
   }
 
-  const students = currentData.map((el) => <StudentRow 
+  const students = currentData.map((el, index) => <StudentRow 
+  rowNum = {index+1}
   initialStudentData={el}
   initialEditMode={false}
   key={el.studentId}

@@ -39,6 +39,15 @@ Group.init (
             type: DataTypes.STRING(50),
             allowNull: false,
             unique: true
+        },
+        level: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 1
+        },
+        notes: {
+            type: DataTypes.TEXT,
+            allowNull: true
         }
     }, {
         sequelize: db
@@ -59,75 +68,6 @@ Ungroup.init (
             type: DataTypes.STRING(30),
             allowNull: false,
             unique: true
-        }
-    }, {
-        sequelize: db
-    }
-)
-
-class StudentGroup extends Model {}
-
-StudentGroup.init (
-    {
-        sgId: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            allowNull: false,
-            primaryKey: true
-        },
-        studentId: {
-            type: DataTypes.INTEGER,
-            foreignKey: true,
-            allowNull: false
-        },
-        studentName: {
-            type: DataTypes.STRING(30),
-            allowNull: false,
-            unique: true
-        },
-        groupId: {
-            type: DataTypes.INTEGER,
-            foreignKey: true,
-            allowNull: false
-        },
-        level: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 1
-        },
-        notes: {
-            type: DataTypes.TEXT,
-            allowNull: true
-        }
-    }, {
-        sequelize: db
-    }
-)
-
-class StudentUngroup extends Model {}
-
-StudentUngroup.init (
-    {
-        suId: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            allowNull: false,
-            primaryKey: true
-        },
-        studentId: {
-            type: DataTypes.INTEGER,
-            foreignKey: true,
-            allowNull: false
-        },
-        studentName: {
-            type: DataTypes.STRING(30),
-            allowNull: false,
-            unique: true
-        },
-        ungroupId: {
-            type: DataTypes.INTEGER,
-            foreignKey: true,
-            allowNull: false
         },
         included: {
             type: DataTypes.BOOLEAN,
@@ -139,12 +79,10 @@ StudentUngroup.init (
 )
 
 
-
-
-Student.belongsToMany(Group, {through: 'StudentGroup', foreignKey: 'groupId'})
-Group.belongsToMany(Student, {through: 'StudentGroup', foreignKey: 'studentId'})
-Student.belongsToMany(Ungroup, {through: 'StudentUngroup', foreignKey: 'ungroupId'})
-Ungroup.belongsToMany(Student, {through: 'StudentUngroup', foreignKey: 'studentId'})
+Student.belongsToMany(Group, {through: 'StudentGroup'})
+Group.belongsToMany(Student, {through: 'StudentGroup'})
+Student.belongsToMany(Ungroup, {through: 'StudentUngroup'})
+Ungroup.belongsToMany(Student, {through: 'StudentUngroup'})
 
 
 if (process.argv[1] === url.fileURLToPath(import.meta.url)) {
@@ -153,4 +91,4 @@ if (process.argv[1] === url.fileURLToPath(import.meta.url)) {
     console.log('Finished syncing database!');
 }
 
-export {Student, Group, Ungroup, StudentGroup, StudentUngroup}
+export {Student, Group, Ungroup}

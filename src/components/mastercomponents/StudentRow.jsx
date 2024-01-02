@@ -12,7 +12,7 @@ const Student = (props) => {
  const [studentId, setStudentId] = useState(initialStudentData.studentId)
  const [studentName, setStudentName] = useState(initialStudentData.studentName)
  const [level, setLevel] = useState(initialStudentData.level)
- const [notes, setNotes] = useState(initialStudentData.notes)
+
 
  const changeEditMode = () => setIsEditing(true)
  const changeNormalMode = () => {
@@ -37,7 +37,7 @@ const Student = (props) => {
     // <div>Student</div>
     <tr>
         <StudentId 
-        value={studentId}
+        value={props.rowNum}
         />
         <StudentName 
         isEditing={editMode}
