@@ -3,7 +3,8 @@ import {Student, Group, Ungroup, StudentGroup, StudentUngroup} from './db/models
 
 const handlerFunctions = {
     getStudents: async (req, res) => {
-        const students = await Student.findAll({include: [{model: StudentGroup}, {model: StudentUngroup}]})
+        const students = await Student.findAll({include: [{model: Group}, {model: Ungroup}]})
+        console.log(students);
         res.send(students)
     },
     addStudent: async (req, res) => {
@@ -11,15 +12,25 @@ const handlerFunctions = {
         const newStudent = {
             studentName: studentName
         }
-        await Student.create(newStudent)
-        const students = await Student.findAll()
+        let student = await Student.create(newStudent)
+        const history = await Group.findByPk(1)
+        const english = await Group.findByPk(2)
+        const math = await Group.findByPk(3)
+        const science = await Group.findByPk(4)
+        const drama = await Ungroup.findByPk(1)
+        const chatty = await Ungroup.findByPk(2)
+        const aggressive = await Ungroup.findByPk(3)
+    
+        await student.addGroups([history, english, math, science])
+        await student.addUngroups([drama, chatty, aggressive])
+        const students = await Student.findAll({include: [{model: Group}, {model: Ungroup}]})
         res.send(students)
     },
     deleteStudent: async (req, res) => {
         const {studentId} =req.params
         const del = await Student.findByPk(studentId)
         await del.destroy()
-        const students = await Student.findAll()
+        const students = await Student.findAll({include: [{model: Group}, {model: Ungroup}]})
         res.send(students)
     },
     editStudent: async (req, res) => {
@@ -31,7 +42,7 @@ const handlerFunctions = {
         student.studentId = studentId
         student.studentName = studentName
         await student.save()
-        const students = await Student.findAll()
+        const students = await Student.findAll({include: [{model: Group}, {model: Ungroup}]})
         res.send(students)
     },
     getGroups: async (req, res) => {
@@ -68,7 +79,7 @@ const handlerFunctions = {
         res.send(groups)
     }, 
     getUngroups: async (req, res) => {
-        const ungroups = await Ungroup.findAll({include: Student})
+        const ungroups = await Ungroup.findAll()
         res.send(ungroups)
     }, 
     addUngroup: async (req, res) => {
@@ -102,7 +113,7 @@ const handlerFunctions = {
         res.send(ungroups)
     },
     getUngroupList: async (req, res) => {
-        const ungroupStudents = await Ungroup.findAll({where: {included: 'true', ungroupName: 'history'}})
+        const ungroupStudents = await Ungroup.findAll({where: {included: 'true', ungroupName: req.body.ungroupName}})
         res.send(ungroupStudents)
     }
     // getSeatingCharts: async (req, res) => {

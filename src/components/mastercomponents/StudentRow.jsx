@@ -10,13 +10,12 @@ const Student = (props) => {
  const {initialStudentData, initialEditMode, deleteStudent, currentData, setCurrentData} = props
  const [editMode, setIsEditing] = useState(initialEditMode)
  const [studentName, setStudentName] = useState(initialStudentData.studentName)
- const [level, setLevel] = useState(initialStudentData.level)
+ const [level, setLevel] = useState(initialStudentData.Groups[0].StudentGroup.level)
 const {studentId} = initialStudentData
 
  const changeEditMode = () => setIsEditing(true)
  const changeNormalMode = () => {
     const bodyObj = {
-
         studentId,
         studentName,
         level
