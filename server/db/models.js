@@ -144,4 +144,4 @@ if (process.argv[1] === url.fileURLToPath(import.meta.url)) {
     console.log('Finished syncing database!');
 }
 
-export {Student, Group, Ungroup}
+export {Student, Group, Ungroup, StudentGroup, StudentUngroup}

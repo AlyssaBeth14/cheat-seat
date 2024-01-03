@@ -1,9 +1,9 @@
-import {Student, Group, Ungroup} from './db/models.js'
+import {Student, Group, Ungroup, StudentGroup, StudentUngroup} from './db/models.js'
 
 
 const handlerFunctions = {
     getStudents: async (req, res) => {
-        const students = await Student.findAll()
+        const students = await Student.findAll({include: [{model: StudentGroup}, {model: StudentUngroup}]})
         res.send(students)
     },
     addStudent: async (req, res) => {
@@ -35,7 +35,7 @@ const handlerFunctions = {
         res.send(students)
     },
     getGroups: async (req, res) => {
-        const groups = await Group.findAll({include: Student})
+        const groups = await Group.findAll()
         res.send(groups)
     },
     addGroup: async (req, res) => {
@@ -100,6 +100,10 @@ const handlerFunctions = {
 
         const ungroups = await Ungroup.findAll()
         res.send(ungroups)
+    },
+    getUngroupList: async (req, res) => {
+        const ungroupStudents = await Ungroup.findAll({where: {included: 'true', ungroupName: 'history'}})
+        res.send(ungroupStudents)
     }
     // getSeatingCharts: async (req, res) => {
 
