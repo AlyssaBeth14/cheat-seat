@@ -1,7 +1,6 @@
 import React from 'react'
 import GroupHeader from './GroupHeader.jsx'
 import GroupStudentRow from './GroupStudentRow.jsx'
-import ModeButtons from '../mastercomponents/ModeButtons.jsx'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 

@@ -54,10 +54,10 @@ const handlerFunctions = {
         })
         student.studentId = studentId
         student.studentName = studentName
-        historyStudent.level = +historyLevel
-        englishStudent.level = +englishLevel
-        mathStudent.level = +mathLevel
-        scienceStudent.level = +scienceLevel
+        historyStudent.level = historyLevel
+        englishStudent.level = englishLevel
+        mathStudent.level = mathLevel
+        scienceStudent.level = scienceLevel
 
         await historyStudent.save()
         await englishStudent.save()
