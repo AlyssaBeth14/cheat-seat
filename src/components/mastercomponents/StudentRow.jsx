@@ -8,6 +8,7 @@ import axios from 'axios'
 
 const Student = (props) => {
  const {initialStudentData, initialEditMode, deleteStudent, currentData, setCurrentData} = props
+ initialStudentData.Groups = initialStudentData.Groups.sort((a,b) => a.groupId - b.groupId)
  const [editMode, setIsEditing] = useState(initialEditMode)
  const [studentName, setStudentName] = useState(initialStudentData.studentName)
  const [historyLevel, setHistoryLevel] = useState(initialStudentData.Groups[0].StudentGroup.level)

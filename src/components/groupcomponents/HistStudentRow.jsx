@@ -12,10 +12,7 @@ const HistStudentRow = (props) => {
     const {initialStudentData, initialEditMode, currentData, setCurrentData} = props
     const [editMode, setIsEditing] = useState(initialEditMode)
     const [studentName, setStudentName] = useState(initialStudentData.studentName)
-    const [history
-        
-        A
-        level, setHistoryLevel] = useState(initialStudentData.level)
+    const [historyLevel, setHistoryLevel] = useState(initialStudentData.level)
     const [notes, setNotes] = useState(initialStudentData.notes)
     const {studentId} = initialStudentData
   
