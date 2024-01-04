@@ -10,10 +10,11 @@ import { useState, useEffect } from 'react'
 const HistStudentRow = (props) => {
 
     const {initialStudentData, initialEditMode, currentData, setCurrentData} = props
+    initialStudentData.Groups = initialStudentData.Groups.sort((a,b) => a.groupId - b.groupId)
     const [editMode, setIsEditing] = useState(initialEditMode)
     const [studentName, setStudentName] = useState(initialStudentData.studentName)
-    const [historyLevel, setHistoryLevel] = useState(initialStudentData.level)
-    const [notes, setNotes] = useState(initialStudentData.notes)
+    const [historyLevel, setHistoryLevel] = useState(initialStudentData.Groups[0].StudentGroup.level)
+    const [historyNotes, setHistoryNotes] = useState(initialStudentData.Groups[0].StudentGroup.notes)
     const {studentId} = initialStudentData
   
     const changeEditMode = () => setIsEditing(true)
@@ -21,8 +22,8 @@ const HistStudentRow = (props) => {
         const bodyObj = {
           studentId,
           studentName,
-          level,
-          notes
+          historyLevel,
+          historyNotes
         }
   
   
@@ -48,12 +49,13 @@ const HistStudentRow = (props) => {
           />
           <StudentLevel 
           isEditing={editMode}
-          value={level}
-          onLevelChange={setLevel}/>       
+          value={historyLevel}
+          onLevelChange={setHistoryLevel}
+          />       
           <Notes 
           isEditing={editMode}
-          value={notes}
-          onNotesChange={setNotes}
+          value={historyNotes}
+          onNotesChange={setHistoryNotes}
           />
           <GroupModeButtons
           isEditing={editMode}

@@ -7,9 +7,61 @@ import GroupModeButtons from './GroupModeButtons.jsx'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
-const EngStudentRow = () => {
+const EngStudentRow = (props) => {
+
+  const {initialStudentData, initialEditMode, currentData, setCurrentData} = props
+  initialStudentData.Groups = initialStudentData.Groups.sort((a,b) => a.groupId - b.groupId)
+  const [editMode, setIsEditing] = useState(initialEditMode)
+  const [studentName, setStudentName] = useState(initialStudentData.studentName)
+  const [englishLevel, setEnglishLevel] = useState(initialStudentData.Groups[1].StudentGroup.level)
+  const [englishNotes, setEnglishNotes] = useState(initialStudentData.Groups[1].StudentGroup.notes)
+  const {studentId} = initialStudentData
+
+  const changeEditMode = () => setIsEditing(true)
+  const changeNormalMode = () => {
+      const bodyObj = {
+        studentId,
+        studentName,
+        englishLevel,
+        englishNotes
+      }
+
+
+      axios.put(`/student/${initialStudentData.studentId}`, bodyObj)
+      .then((res) => {
+        setCurrentData(res.data)
+        setIsEditing(false)
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+
+  }
   return (
-    <div>EngStudentRow</div>
+    <tr>
+        <StudentId 
+        studentId={props.rowNum}
+        />
+        <StudentName 
+        isEditing={editMode}
+        value={studentName}
+        onNameChange={setStudentName}
+        />
+        <StudentLevel 
+        isEditing={editMode}
+        value={englishLevel}
+        onLevelChange={setEnglishLevel}/>       
+        <Notes 
+        isEditing={editMode}
+        value={englishNotes}
+        onNotesChange={setEnglishNotes}
+        />
+        <GroupModeButtons
+        isEditing={editMode}
+        changeEditMode={changeEditMode}
+        changeNormalMode={changeNormalMode}
+        />      
+    </tr>
   )
 }
 

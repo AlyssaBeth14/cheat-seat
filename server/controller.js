@@ -36,7 +36,7 @@ const handlerFunctions = {
     editStudent: async (req, res) => {
         console.log(req.body);
         const {studentId} = req.params
-        const {studentName, historyLevel, englishLevel, mathLevel, scienceLevel} = req.body
+        const {studentName, historyLevel, englishLevel, mathLevel, scienceLevel, historyNotes, englishNotes, mathNotes, scienceNotes} = req.body
         const student = await Student.findOne({
             where: {studentId: studentId}
         })
@@ -58,6 +58,10 @@ const handlerFunctions = {
         englishStudent.level = englishLevel
         mathStudent.level = mathLevel
         scienceStudent.level = scienceLevel
+        historyStudent.notes = historyNotes
+        englishStudent.notes = englishNotes
+        mathStudent.notes = mathNotes
+        scienceStudent.notes = scienceNotes
 
         await historyStudent.save()
         await englishStudent.save()
