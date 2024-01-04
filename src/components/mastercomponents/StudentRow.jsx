@@ -46,6 +46,21 @@ const {studentId} = initialStudentData
         value={level}
         onLevelChange={setLevel}
         />
+        <StudentLevel 
+        isEditing={editMode}
+        value={level}
+        onLevelChange={setLevel}
+        />
+        <StudentLevel 
+        isEditing={editMode}
+        value={level}
+        onLevelChange={setLevel}
+        />
+        <StudentLevel 
+        isEditing={editMode}
+        value={level}
+        onLevelChange={setLevel}
+        />
         <ModeButtons 
         isEditing={editMode}
         changeEditMode={changeEditMode}

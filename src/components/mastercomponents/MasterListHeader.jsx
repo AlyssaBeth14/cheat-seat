@@ -1,14 +1,15 @@
 import React from 'react'
 
-const MasterListHeader = (props) => {
-
-  const {groupName} = props
+const MasterListHeader = () => {
 
   return (
     <tr>
         <th>#</th>
         <th>Name</th>
-        <th>"Group Name"</th>
+        <th>History</th>
+        <th>English</th>
+        <th>Math</th>
+        <th>Science</th>
         <th></th>
     </tr>
  

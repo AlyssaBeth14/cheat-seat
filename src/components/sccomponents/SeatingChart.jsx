@@ -3,8 +3,7 @@ import React from 'react'
 const SeatingChart = (props) => {
   return (
    <body>
-    <div>{chartName}</div>
-    <input img src=''/>
+    <div>Seating Chart Design</div>
     </body>
   )
 }

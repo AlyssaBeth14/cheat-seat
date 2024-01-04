@@ -17,12 +17,12 @@ const handlerFunctions = {
         const english = await Group.findByPk(2)
         const math = await Group.findByPk(3)
         const science = await Group.findByPk(4)
-        const drama = await Ungroup.findByPk(1)
-        const chatty = await Ungroup.findByPk(2)
-        const aggressive = await Ungroup.findByPk(3)
+        const ungroupOne = await Ungroup.findByPk(1)
+        const ungroupTwo = await Ungroup.findByPk(2)
+        const ungroupThree = await Ungroup.findByPk(3)
     
         await student.addGroups([history, english, math, science])
-        await student.addUngroups([drama, chatty, aggressive])
+        await student.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
         const students = await Student.findAll({include: [{model: Group}, {model: Ungroup}]})
         res.send(students)
     },

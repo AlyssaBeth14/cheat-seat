@@ -4,25 +4,15 @@ import GroupChart from './components/groupcomponents/GroupChart.jsx'
 import Header from './components/main/Header.jsx'
 import UngroupChart from './components/ungroupcomponents/UngroupChart.jsx'
 import {Outlet} from 'react-router-dom'
-// import Sidebar from './components/main/Sidebar.jsx'
-
+import NavigationBar from './components/main/Navbar.jsx'
 import './App.css'
 
 function App() {
 
   return  (
   <>
-  <header>
-    <Header />
-  </header>
-  <body>
-  {/* <Sidebar /> */}
+  <NavigationBar />
   <Outlet />
-  <MasterListDisplay />
-  <GroupChart />
-  {/* <GroupDisplay /> */}
-  <UngroupChart />
-  </body>
   </>
   )
 }

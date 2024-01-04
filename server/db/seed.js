@@ -29,14 +29,14 @@ const science = await Group.create({
     groupName: 'Science'
 })
 
-const drama = await Ungroup.create({
-    ungroupName: 'Drama'
+const ungroupOne = await Ungroup.create({
+    ungroupName: 'Ungroup 1'
 })
-const chatty = await Ungroup.create({
-    ungroupName: 'Chatty'
+const ungroupTwo = await Ungroup.create({
+    ungroupName: 'Ungroup 2'
 })
-const aggressive = await Ungroup.create({
-    ungroupName: 'Aggressive'
+const ungroupThree = await Ungroup.create({
+    ungroupName: 'Ungroup 3'
 })
 
 await jackie.addGroups([history, english, math, science])
@@ -45,8 +45,8 @@ await billy.addGroups([history, english, math, science])
 await john.addGroups([history, english, math, science])
 await elizabeth.addGroups([history, english, math, science])
 
-await jackie.addUngroups([drama, chatty, aggressive])
-await loki.addUngroups([drama, chatty, aggressive])
-await billy.addUngroups([drama, chatty, aggressive])
-await john.addUngroups([drama, chatty, aggressive])
-await elizabeth.addUngroups([drama, chatty, aggressive])
+await jackie.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await loki.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await billy.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await john.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await elizabeth.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
