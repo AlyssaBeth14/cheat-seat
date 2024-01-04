@@ -10,7 +10,10 @@ const Student = (props) => {
  const {initialStudentData, initialEditMode, deleteStudent, currentData, setCurrentData} = props
  const [editMode, setIsEditing] = useState(initialEditMode)
  const [studentName, setStudentName] = useState(initialStudentData.studentName)
- const [level, setLevel] = useState(initialStudentData.Groups[0].StudentGroup.level)
+ const [historyLevel, setHistoryLevel] = useState(initialStudentData.Groups[0].StudentGroup.level)
+ const [englishLevel, setEnglishLevel] = useState(initialStudentData.Groups[1].StudentGroup.level)
+ const [mathLevel, setMathLevel] = useState(initialStudentData.Groups[2].StudentGroup.level)
+ const [scienceLevel, setScienceLevel] = useState(initialStudentData.Groups[3].StudentGroup.level)
 const {studentId} = initialStudentData
 
  const changeEditMode = () => setIsEditing(true)
@@ -18,7 +21,10 @@ const {studentId} = initialStudentData
     const bodyObj = {
         studentId,
         studentName,
-        level
+        historyLevel,
+        englishLevel,
+        mathLevel,
+        scienceLevel
     }
 
     axios.put(`/student/${initialStudentData.studentId}`, bodyObj)
@@ -43,23 +49,23 @@ const {studentId} = initialStudentData
         />
         <StudentLevel 
         isEditing={editMode}
-        value={level}
-        onLevelChange={setLevel}
+        value={historyLevel}
+        onLevelChange={setHistoryLevel}
         />
         <StudentLevel 
         isEditing={editMode}
-        value={level}
-        onLevelChange={setLevel}
+        value={englishLevel}
+        onLevelChange={setEnglishLevel}
         />
         <StudentLevel 
         isEditing={editMode}
-        value={level}
-        onLevelChange={setLevel}
+        value={mathLevel}
+        onLevelChange={setMathLevel}
         />
         <StudentLevel 
         isEditing={editMode}
-        value={level}
-        onLevelChange={setLevel}
+        value={scienceLevel}
+        onLevelChange={setScienceLevel}
         />
         <ModeButtons 
         isEditing={editMode}

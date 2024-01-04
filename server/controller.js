@@ -34,13 +34,36 @@ const handlerFunctions = {
         res.send(students)
     },
     editStudent: async (req, res) => {
+        console.log(req.body);
         const {studentId} = req.params
-        const {studentName} = req.body
+        const {studentName, historyLevel, englishLevel, mathLevel, scienceLevel} = req.body
         const student = await Student.findOne({
             where: {studentId: studentId}
         })
+        const historyStudent = await StudentGroup.findOne({
+            where: {studentId: studentId, groupId: 1}
+        })
+        const englishStudent = await StudentGroup.findOne({
+            where: {studentId: studentId, groupId: 2}
+        })
+        const mathStudent = await StudentGroup.findOne({
+            where: {studentId: studentId, groupId: 3}
+        })
+        const scienceStudent = await StudentGroup.findOne({
+            where: {studentId: studentId, groupId: 4}
+        })
         student.studentId = studentId
         student.studentName = studentName
+        historyStudent.level = +historyLevel
+        englishStudent.level = +englishLevel
+        mathStudent.level = +mathLevel
+        scienceStudent.level = +scienceLevel
+
+        await historyStudent.save()
+        await englishStudent.save()
+        await mathStudent.save()
+        await scienceStudent.save()
+
         await student.save()
         const students = await Student.findAll({include: [{model: Group}, {model: Ungroup}]})
         res.send(students)

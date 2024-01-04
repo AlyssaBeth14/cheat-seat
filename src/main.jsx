@@ -9,7 +9,7 @@ import UngroupChart from './components/ungroupcomponents/UngroupChart.jsx'
 import SeatingChart from './components/sccomponents/SeatingChart.jsx'
 
 
-// import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.css'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
