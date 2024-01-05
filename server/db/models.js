@@ -59,10 +59,6 @@ Ungroup.init (
             type: DataTypes.STRING(30),
             allowNull: false,
             unique: true
-        },
-        included: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: false
         }
     }, {
         sequelize: db

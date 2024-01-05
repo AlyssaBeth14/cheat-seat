@@ -34,9 +34,10 @@ const handlerFunctions = {
         res.send(students)
     },
     editStudent: async (req, res) => {
-        console.log(req.body);
+        console.log('LOOK HERE', req.body);
         const {studentId} = req.params
-        const {studentName, historyLevel, englishLevel, mathLevel, scienceLevel, historyNotes, englishNotes, mathNotes, scienceNotes} = req.body
+        const {studentName, historyLevel, englishLevel, mathLevel, scienceLevel, historyNotes, englishNotes, mathNotes, scienceNotes, includedOne, includedTwo, includedThree} = req.body
+        console.log(englishLevel);
         const student = await Student.findOne({
             where: {studentId: studentId}
         })
@@ -52,22 +53,36 @@ const handlerFunctions = {
         const scienceStudent = await StudentGroup.findOne({
             where: {studentId: studentId, groupId: 4}
         })
+        const ungroupOneStudent = await StudentUngroup.findOne({
+            where: {studentId: studentId, ungroupId: 1}
+        })
+        const ungroupTwoStudent = await StudentUngroup.findOne({
+            where: {studentId: studentId, ungroupId: 2}
+        })
+        const ungroupThreeStudent = await StudentUngroup.findOne({
+            where: {studentId: studentId, ungroupId: 3}
+        })
         student.studentId = studentId
         student.studentName = studentName
-        historyStudent.level = historyLevel
-        englishStudent.level = englishLevel
-        mathStudent.level = mathLevel
-        scienceStudent.level = scienceLevel
-        historyStudent.notes = historyNotes
-        englishStudent.notes = englishNotes
-        mathStudent.notes = mathNotes
-        scienceStudent.notes = scienceNotes
+        historyStudent.level = historyLevel ?? historyStudent.level
+        englishStudent.level = englishLevel ?? englishStudent.level
+        mathStudent.level = mathLevel ?? mathStudent.level
+        scienceStudent.level = scienceLevel ?? scienceStudent.level
+        historyStudent.notes = historyNotes ?? historyStudent.notes
+        englishStudent.notes = englishNotes ?? englishStudent.notes
+        mathStudent.notes = mathNotes ?? mathStudent.notes
+        scienceStudent.notes = scienceNotes ?? scienceStudent.notes
+        ungroupOneStudent.included = includedOne ?? ungroupOneStudent.included
+        ungroupTwoStudent.included = includedTwo ?? ungroupTwoStudent.included
+        ungroupThreeStudent.included = includedThree ?? ungroupThreeStudent.included
 
         await historyStudent.save()
         await englishStudent.save()
         await mathStudent.save()
         await scienceStudent.save()
-
+        await ungroupOneStudent.save()
+        await ungroupTwoStudent.save()
+        await ungroupThreeStudent.save()
         await student.save()
         const students = await Student.findAll({include: [{model: Group}, {model: Ungroup}]})
         res.send(students)

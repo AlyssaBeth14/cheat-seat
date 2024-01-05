@@ -50,7 +50,8 @@ const EngStudentRow = (props) => {
         <StudentLevel 
         isEditing={editMode}
         value={englishLevel}
-        onLevelChange={setEnglishLevel}/>       
+        onLevelChange={setEnglishLevel}
+        />       
         <Notes 
         isEditing={editMode}
         value={englishNotes}

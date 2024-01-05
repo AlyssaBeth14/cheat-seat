@@ -4,12 +4,14 @@ import App from './App.jsx'
 import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} from 'react-router-dom'
 import './index.css'
 import MasterListDisplay from './components/mastercomponents/MasterListDisplay.jsx'
-import UngroupChart from './components/ungroupcomponents/UngroupChart.jsx'
 import SeatingChart from './components/sccomponents/SeatingChart.jsx'
 import HistoryGroupChart from './components/groupcomponents/HistoryGroupChart.jsx'
 import EnglishGroupChart from './components/groupcomponents/EnglishGroupChart.jsx'
 import ScienceGroupChart from './components/groupcomponents/ScienceGroupChart.jsx'
 import MathGroupChart from './components/groupcomponents/MathGroupChart.jsx'
+import UngroupOneChart from './components/ungroupcomponents/UngroupOneChart.jsx'
+import UngroupTwoChart from './components/ungroupcomponents/UngroupTwoChart.jsx'
+import UngroupThreeChart from './components/ungroupcomponents/UngroupThreeChart.jsx'
 
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -22,9 +24,9 @@ const router = createBrowserRouter(
       <Route path='/english_group' element={<EnglishGroupChart />}/>
       <Route path='/math_group' element={<MathGroupChart />}/>
       <Route path='/science_group' element={<ScienceGroupChart />}/>
-      <Route path='/ungroup1' element={<UngroupChart/>}/>
-      {/* <Route path='/ungroup2' element={}/>
-      <Route path='/ungroup3' element={}/> */}
+      <Route path='/ungroup1' element={<UngroupOneChart/>}/>
+      <Route path='/ungroup2' element={<UngroupTwoChart/>}/>
+      <Route path='/ungroup3' element={<UngroupThreeChart/>}/>
     </Route>
   )
 )
