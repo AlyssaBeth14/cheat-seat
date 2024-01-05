@@ -7,8 +7,9 @@ import axios from 'axios'
 
 const UngroupOneRow = (props) => {
     const {initialStudentData, initialEditMode, currentData, setCurrentData} = props
+    initialStudentData.Ungroups = initialStudentData.Ungroups.sort((a,b) => a.ungroupId - b.ungroupId)
     const [editMode, setIsEditing] = useState(initialEditMode)
-    const [includedOne, setIncludedOne] = useState(initialStudentData.Ungroups[1].StudentUngroup.included)
+    const [includedOne, setIncludedOne] = useState(initialStudentData.Ungroups[0].StudentUngroup.included)
     const {studentId, studentName} = initialStudentData
     
     const changeEditMode = () => setIsEditing(true)

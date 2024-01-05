@@ -1,21 +1,23 @@
 import React from 'react'
 
 const Include = (props) => {
-  const {isEditing, onIncludeChange, value, changeNormalMode} = props
+  const {isEditing, onIncludeChange, value: added, changeNormalMode} = props
     const toggle = () => {
-      if(value === false){
+      if(added === false){
         onIncludeChange(true)
         console.log('if hit');
       } else {
         onIncludeChange(false)
         console.log('else hit!');
       }
+      // changeNormalMode()
     }
-console.log(value);
+// console.log(added);
   return (
     <input type='checkbox' 
-    value={value}
-    onClick={toggle}/>
+    value={added}
+    checked={added}
+    onChange={toggle}/>
   ) 
 }
 

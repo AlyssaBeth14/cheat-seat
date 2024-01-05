@@ -72,9 +72,11 @@ const handlerFunctions = {
         englishStudent.notes = englishNotes ?? englishStudent.notes
         mathStudent.notes = mathNotes ?? mathStudent.notes
         scienceStudent.notes = scienceNotes ?? scienceStudent.notes
+
         ungroupOneStudent.included = includedOne ?? ungroupOneStudent.included
         ungroupTwoStudent.included = includedTwo ?? ungroupTwoStudent.included
         ungroupThreeStudent.included = includedThree ?? ungroupThreeStudent.included
+        console.log(student.studentName, ungroupOneStudent.included, ungroupTwoStudent.included, ungroupThreeStudent.included);
 
         await historyStudent.save()
         await englishStudent.save()

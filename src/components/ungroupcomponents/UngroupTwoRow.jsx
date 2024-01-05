@@ -1,5 +1,5 @@
 import React from 'react'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import StudentId from '../mastercomponents/StudentId.jsx'
 import StudentName from '../mastercomponents/StudentName.jsx'
 import Include from './Include.jsx'
@@ -7,10 +7,11 @@ import axios from 'axios'
 
 const UngroupTwoRow = (props) => {
     const {initialStudentData, initialEditMode, currentData, setCurrentData} = props
+    initialStudentData.Ungroups = initialStudentData.Ungroups.sort((a,b) => a.ungroupId - b.ungroupId)
     const [editMode, setIsEditing] = useState(initialEditMode)
-    const [includedTwo, setIncludedTwo] = useState(initialStudentData.Ungroups[2].StudentUngroup.included)
+    const [includedTwo, setIncludedTwo] = useState(initialStudentData.Ungroups[1].StudentUngroup.included)
     const {studentId, studentName} = initialStudentData
-    
+
     const changeEditMode = () => setIsEditing(true)
     const changeNormalMode = () => {
       const bodyObj ={
@@ -27,6 +28,10 @@ const UngroupTwoRow = (props) => {
         console.log(err);
       })
     }
+
+    useEffect(() => {
+      changeNormalMode()
+    }, [includedTwo])
     
       return (
         <tr>
@@ -37,7 +42,10 @@ const UngroupTwoRow = (props) => {
           value={studentName}
           />
           <Include
-          onIncludeChange={setIncludedTwo}
+           isEditing={editMode}
+           value={includedTwo}
+           onIncludeChange={setIncludedTwo}
+           changeNormalMode={changeNormalMode}
           />
         </tr>
       )
