@@ -60,7 +60,7 @@ const MasterListDisplay = (props) => {
   />)
 
   return (
-    <div>
+    <div style={{overflow: scroll}}>
     <table>
       <thead>
         <MasterListHeader />

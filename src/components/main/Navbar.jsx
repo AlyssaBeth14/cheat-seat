@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 
 const NavigationBar = () => {
   return (
-    <Navbar expand='md' bg='primary' data-bs-theme='dark'>
+    <Navbar expand='md' bg='info' data-bs-theme='light' className="navbaredit">
         <Container fluid>
-            <Navbar.Brand href='#home'>Cheat Seat</Navbar.Brand>
+            <Navbar.Brand href='#home' className='editnav'><img src="public\Cheat_Seat-removebg-preview.png" /></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className='me-auto'>
