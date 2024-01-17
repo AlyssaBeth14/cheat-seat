@@ -35,4 +35,4 @@ app.put('/ungroup/:ungroupId', editUngroup)
 // app.put('/seatingchart/:scId', editSeatingChart)
 
 //Open door to server
-ViteExpress.listen(app, 2319, () => console.log(`We've got a 2319! Report to http://localhost:2319`))
+ViteExpress.listen(app, 2340, () => console.log(`We've got a 2340! Report to http://localhost:2340`))

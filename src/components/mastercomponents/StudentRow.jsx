@@ -5,6 +5,8 @@ import StudentName from './StudentName.jsx'
 import StudentLevel from './StudentLevel.jsx'
 import ModeButtons from './ModeButtons.jsx'
 import axios from 'axios'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const Student = (props) => {
  const {initialStudentData, initialEditMode, deleteStudent, currentData, setCurrentData} = props

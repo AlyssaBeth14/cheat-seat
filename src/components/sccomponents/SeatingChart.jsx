@@ -1,11 +1,20 @@
-import React from 'react'
+import React from 'react';
+import DnD from './DnD.jsx';
+import GenerateSeatingChartButton from './GenerateSeatingChartButton.jsx';
 
-const SeatingChart = (props) => {
-  return (
-   <body>
-    <div>Seating Chart Design</div>
-    </body>
-  )
+class SeatingChart extends React.Component {
+
+  render() {
+    return (
+      <>
+     <div>
+        <DnD />
+      </div>
+      <div>
+        <GenerateSeatingChartButton />
+      </div>
+      </>
+    )
+  }
 }
-
 export default SeatingChart

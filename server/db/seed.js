@@ -15,6 +15,45 @@ const john = await Student.create({
 const elizabeth = await Student.create({
     studentName: 'Elizabeth'
 })
+const brittany = await Student.create({
+    studentName: 'Brittany'
+})
+const jane = await Student.create({
+    studentName: 'Jane'
+})
+const carrie = await Student.create({
+    studentName: 'Carrie'
+})
+const lorelai = await Student.create({
+    studentName: 'Lorelai'
+})
+const daniel = await Student.create({
+    studentName: 'Daniel'
+})
+const douglas = await Student.create({
+    studentName: 'Douglas'
+})
+const donald = await Student.create({
+    studentName: 'Donald'
+})
+const harry = await Student.create({
+    studentName: 'Harry'
+})
+const harriet = await Student.create({
+    studentName: 'Harriet'
+})
+const jericho = await Student.create({
+    studentName: 'Jericho'
+})
+const tinsley = await Student.create({
+    studentName: 'Tinsley'
+})
+const talmage = await Student.create({
+    studentName: 'Talmage'
+})
+const kyle = await Student.create({
+    studentName: 'Kyle'
+})
 
 const history = await Group.create({
     groupName: 'History'
@@ -44,9 +83,35 @@ await loki.addGroups([history, english, math, science])
 await billy.addGroups([history, english, math, science])
 await john.addGroups([history, english, math, science])
 await elizabeth.addGroups([history, english, math, science])
+await brittany.addGroups([history, english, math, science])
+await jane.addGroups([history, english, math, science])
+await carrie.addGroups([history, english, math, science])
+await lorelai.addGroups([history, english, math, science])
+await daniel.addGroups([history, english, math, science])
+await douglas.addGroups([history, english, math, science])
+await donald.addGroups([history, english, math, science])
+await harry.addGroups([history, english, math, science])
+await harriet.addGroups([history, english, math, science])
+await jericho.addGroups([history, english, math, science])
+await tinsley.addGroups([history, english, math, science])
+await talmage.addGroups([history, english, math, science])
+await kyle.addGroups([history, english, math, science])
 
 await jackie.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
 await loki.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
 await billy.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
 await john.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
 await elizabeth.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await brittany.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await jane.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await carrie.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await lorelai.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await daniel.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await douglas.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await donald.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await harry.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await harriet.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await jericho.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await tinsley.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await talmage.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
+await kyle.addUngroups([ungroupOne, ungroupTwo, ungroupThree])
