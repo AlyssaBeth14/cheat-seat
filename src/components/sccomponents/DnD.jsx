@@ -19,7 +19,7 @@ const DnD = (props) => {
             position={null}
             grid={[1, 1]}
             scale={1}
-            bounds={designbox}
+            bounds={parent}
             allowAnyClick={false}
         >
             <div >
@@ -42,7 +42,7 @@ const DnD = (props) => {
             position={null}
             grid={[1, 1]}
             scale={1}
-            bounds={designbox}
+            bounds={parent}
             allowAnyClick={false}
             >
             <div >
@@ -51,8 +51,8 @@ const DnD = (props) => {
         </Draggable>]
 
         setMyArr(copy)
-        let newX = xTable + 10
-        let newY = yTable + 10
+        let newX = xTable + 2
+        let newY = yTable + 2
         setXTable(newX)
         setYTable(newY)
     }
