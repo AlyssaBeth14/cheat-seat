@@ -2,10 +2,10 @@ import React from 'react'
 
 const Ungroups = () => {
   return (
-    <body>
+    <div>
         <UngroupName />
         <SelectedStudents />
-    </body>
+    </div>
   )
 }
 

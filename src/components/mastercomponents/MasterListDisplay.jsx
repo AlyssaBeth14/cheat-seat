@@ -61,7 +61,7 @@ const MasterListDisplay = (props) => {
 
   return (
     <div style={{}}>
-    <table style={{textAlign: 'center', borderRadius: '25px'}}>
+    <table style={{textAlign: 'center'}}>
       <thead>
         <MasterListHeader />
      </thead>

@@ -15,6 +15,7 @@ const Include = (props) => {
 // console.log(added);
   return (
     <input type='checkbox' 
+    style={{height: '20px', width: '20px', accentColor: '#deacde'}}
     value={added}
     checked={added}
     onChange={toggle}/>

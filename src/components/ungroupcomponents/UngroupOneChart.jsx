@@ -3,6 +3,7 @@ import UngroupHeader from './UngroupHeader.jsx'
 import UngroupOneRow from './UngroupOneRow.jsx'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import UngroupStudentList from './UngroupStudentList.jsx'
 
 const UngroupOneChart = (props) => {
     const [currentData, setCurrentData] = useState([])
@@ -30,7 +31,7 @@ const UngroupOneChart = (props) => {
     )
   
     return (
-      <body>
+      <div>
         <table>
           <thead>
            <UngroupHeader />
@@ -39,7 +40,10 @@ const UngroupOneChart = (props) => {
             {students}
           </tbody>
         </table>
-      </body>
+        <div style={{position: 'right'}}>
+          {/* <UngroupStudentList /> */}
+        </div>
+      </div>
     )
   }
 

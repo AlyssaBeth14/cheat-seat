@@ -1,22 +1,11 @@
 import React from 'react'
 
-const UngroupStudentList = (props) => {
-
-// const ungroupStudents = currentData.map((el) => {
-// initialStudentData={el}
-// initialUngroupData={el}
-// // initialEditMode={false}
-// key={el.ungroupId}
-// currentData={currentData}
-// setCurrentData={setCurrentData}
-// }
-// )
-
-
+const UngroupStudentList = () => {
+  
   return (
-    <>
-    {ungroupStudents}
-    </>
+    <div>
+        Ungroup Student List
+    </div>
   )
 }
 
