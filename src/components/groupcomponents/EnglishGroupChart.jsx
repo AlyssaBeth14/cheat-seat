@@ -31,6 +31,7 @@ const EnglishGroupChart = (props) => {
     )
       return (
         <div>
+          <h1 style={{textAlign: 'center', marginTop: '15px', fontWeight: '800', fontSize: 'xxx-large'}}>English</h1>
           <table>
             <thead>
               <GroupHeader />

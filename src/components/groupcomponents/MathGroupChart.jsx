@@ -31,6 +31,7 @@ const MathGroupChart = (props) => {
     )
       return (
         <div>
+          <h1 style={{textAlign: 'center', marginTop: '15px', fontWeight: '800', fontSize: 'xxx-large'}}>Math</h1>
           <table>
             <thead>
               <GroupHeader />

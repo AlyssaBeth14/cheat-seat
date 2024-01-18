@@ -31,6 +31,7 @@ const ScienceGroupChart = (props) => {
     )
       return (
         <div>
+          <h1 style={{textAlign: 'center', marginTop: '15px', fontWeight: '800', fontSize: 'xxx-large'}}>Science</h1>
           <table>
             <thead>
               <GroupHeader />

@@ -33,18 +33,30 @@ const UngroupTwoChart = (props) => {
   
     return (
       <div>
-        <table>
-          <thead>
-           <UngroupHeader />
-          </thead>
-           <tbody>
-            {students}
-          </tbody>
-        </table>
-        <div>
-          {/* <UngroupStudentList /> */}
-        </div>
-      </div>
+      <main>
+        <section style={{height: '66%',  width: '30%', float: 'left'}}>
+          <table>
+            <thead>
+              <UngroupHeader />
+            </thead>
+             <tbody>
+              {students}
+            </tbody>
+          </table>
+        </section>
+        <section style={{height: '100vh', width: '70%', float: 'right' }}>
+          <div style={{height: '65%', width: '75%', border: '7px solid #deacde', marginLeft: '100px', marginTop: '60px', borderRadius: '10px', backgroundColor: 'mintcream'}}>
+            <div style={{fontSize: 'xxx-large', fontWeight: '1000', marginLeft: '30px' }}>
+            Ungroup 2:
+            </div>
+            <div>
+
+            </div>
+          </div>
+
+        </section>
+      </main>
+    </div>
     )
   }
 
