@@ -60,8 +60,8 @@ const MasterListDisplay = (props) => {
   />)
 
   return (
-    <div style={{overflow: scroll}}>
-    <table>
+    <div style={{}}>
+    <table style={{textAlign: 'center', borderRadius: '25px'}}>
       <thead>
         <MasterListHeader />
      </thead>
@@ -70,10 +70,8 @@ const MasterListDisplay = (props) => {
       {/* {notes && <Notes />}
       <button onClick={showNotes}>toggle</button> */}
      </tbody>
-     <tfoot>
-        <AddStudent addStudent={addStudent} />
-     </tfoot>
     </table>
+    <AddStudent addStudent={addStudent} />
     </div>
   )
 }

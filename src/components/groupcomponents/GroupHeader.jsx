@@ -3,7 +3,7 @@ import React from 'react'
 const GroupHeader = () => {
 
   return (
-    <tr>
+    <tr className='header'>
         <th>#</th>
         <th>Name</th>
         <th>Level</th>

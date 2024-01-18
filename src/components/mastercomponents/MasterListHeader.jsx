@@ -1,11 +1,9 @@
 import React from 'react'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 
 const MasterListHeader = () => {
 
   return (
-    <tr>
+    <tr className='header'>
         <th>#</th>
         <th>Name</th>
         <th>History</th>

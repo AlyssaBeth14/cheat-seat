@@ -12,6 +12,7 @@ class SeatingChart extends React.Component {
       </div>
       <div>
         <GenerateSeatingChartButton />
+        <br />
       </div>
       </>
     )

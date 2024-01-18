@@ -39,29 +39,39 @@ const EngStudentRow = (props) => {
   }
   return (
     <tr>
+        <td>
         <StudentId 
         studentId={props.rowNum}
         />
+        </td>
+        <td>
         <StudentName 
         isEditing={editMode}
         value={studentName}
         onNameChange={setStudentName}
         />
+        </td>
+        <td>
         <StudentLevel 
         isEditing={editMode}
         value={englishLevel}
         onLevelChange={setEnglishLevel}
-        />       
+        />  
+        </td>
+        <td>    
         <Notes 
         isEditing={editMode}
         value={englishNotes}
         onNotesChange={setEnglishNotes}
         />
+        </td> 
+        <td>
         <GroupModeButtons
         isEditing={editMode}
         changeEditMode={changeEditMode}
         changeNormalMode={changeNormalMode}
         />      
+        </td>
     </tr>
   )
 }

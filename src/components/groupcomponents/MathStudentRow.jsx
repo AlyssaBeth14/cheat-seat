@@ -39,28 +39,38 @@ const MathStudentRow = (props) => {
   }
   return (
     <tr>
+        <td>
         <StudentId 
         studentId={props.rowNum}
         />
+        </td>
+        <td>
         <StudentName 
         isEditing={editMode}
         value={studentName}
         onNameChange={setStudentName}
         />
+        </td>
+        <td>
         <StudentLevel 
         isEditing={editMode}
         value={mathLevel}
-        onLevelChange={setMathLevel}/>       
+        onLevelChange={setMathLevel}/>   
+        </td>
+        <td>  
         <Notes 
         isEditing={editMode}
         value={mathNotes}
         onNotesChange={setMathNotes}
         />
+        </td>  
+        <td>
         <GroupModeButtons
         isEditing={editMode}
         changeEditMode={changeEditMode}
         changeNormalMode={changeNormalMode}
         />      
+        </td>
     </tr>
   )
 }

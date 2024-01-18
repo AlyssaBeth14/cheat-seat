@@ -19,7 +19,7 @@ const DnD = (props) => {
             position={null}
             grid={[1, 1]}
             scale={1}
-
+            bounds={designbox}
             allowAnyClick={false}
         >
             <div >
@@ -28,8 +28,8 @@ const DnD = (props) => {
         </Draggable>]
 
         setMyArr(copy)
-        let newX = xChair + 50
-        let newY = yChair + 50
+        let newX = xChair + 10
+        let newY = yChair + 10
         setXChair(newX)
         setYChair(newY)
     }
@@ -42,6 +42,7 @@ const DnD = (props) => {
             position={null}
             grid={[1, 1]}
             scale={1}
+            bounds={designbox}
             allowAnyClick={false}
             >
             <div >
@@ -50,29 +51,33 @@ const DnD = (props) => {
         </Draggable>]
 
         setMyArr(copy)
-        let newX = xTable + 50
-        let newY = yTable + 50
+        let newX = xTable + 10
+        let newY = yTable + 10
         setXTable(newX)
         setYTable(newY)
     }
 
     return (
-        <div className='container'>
+        <div className='container' >
+            <div class='selectbox' style={{width: '8vw', border: '10px solid white', textAlign: 'center', padding: '20px', backgroundColor: '#d2f2e2', borderRadius: '10px', color: '#3b3b3b'}}>
+            <h3>SELECT:</h3>
+    
             <img
                 onClick={addTable}
                 src="public/4e79b527-b37b-4a87-8004-156eb64fa42e_1.74a83dc5c6315a4e0dc5fa1f16aa8a88-removebg-preview.png"
-                width="50"
-                height="50"
+                width="100"
+                height="100"
             />
 
             <div id="draggable_box_2" className="handle">
                 <img onClick={addChair} src="public/roshak_10-removebg-preview.png"
-                    width="50"
-                    height="50"
+                    width="100"
+                    height="100"
                 />
             </div>
+            </div>
 
-            <div className='container' style={{ width: '50vw', height: '50vh', backgroundColor: 'green' }}>
+            <div className='container' style={{ width: '150vw', height: '75vh', backgroundColor: 'mintcream', border: '10px solid white', borderRadius: '25px'}} id='designbox'>
 
                 {myArr}
             </div>

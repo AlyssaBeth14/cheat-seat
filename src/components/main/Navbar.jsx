@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const NavigationBar = () => {
   return (
-    <Navbar expand='md' bg='info' data-bs-theme='light' className="navbaredit">
+    <Navbar expand='md' bg='light' data-bs-theme='light' className="navbaredit">
         <Container fluid>
             <Navbar.Brand href='#home' className='editnav'><img src="public\Cheat_Seat-removebg-preview.png" /></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />

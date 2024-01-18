@@ -1,27 +1,44 @@
 body {
-  background-color: violet;
+  background-color: green;
 }
 
 table {
-  overflow-x: scroll;
-  max-height: 100px;
   border: 1px solid black;
+  border-radius: 10px;
+  border-spacing: 0;
+  border-collapse: separate;
 }
 
 table tbody {
   overflow: auto;
   height: 100 px;
-  background-color: pink;
+  background-color: #deacde;
+}
+
+.header {
+  height: 20px;
+  background-color: #ae4dc4;
+  font-size:x-large;
+  padding: 5px;
+}
+
+th, td {
+  padding: 10px
+}
+
+tr, td {
+  padding: 10px;
+  border: 1px solid black;
+  font-size: medium;
+  font-weight: 750;
+  text-align: center;
 }
 
 .me-auto {
-  background-color: aquamarine;
+  font-weight: 1000;
+  font-size:x-large;
 }
 
-.editnav {
-  /* background-color: blueviolet;; */
-}
-
-.navbaredit {
-  color: brown;
+tr {
+  text-align: center;
 }

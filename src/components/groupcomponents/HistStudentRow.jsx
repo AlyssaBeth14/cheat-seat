@@ -39,29 +39,39 @@ const HistStudentRow = (props) => {
     }
     return (
       <tr>
+          <td>
           <StudentId 
           studentId={props.rowNum}
           />
+          </td>
+          <td>
           <StudentName 
           isEditing={editMode}
           value={studentName}
           onNameChange={setStudentName}
           />
+          </td>
+          <td>
           <StudentLevel 
           isEditing={editMode}
           value={historyLevel}
           onLevelChange={setHistoryLevel}
-          />       
+          />  
+          </td>
+          <td>    
           <Notes 
           isEditing={editMode}
           value={historyNotes}
           onNotesChange={setHistoryNotes}
           />
+          </td> 
+          <td>
           <GroupModeButtons
           isEditing={editMode}
           changeEditMode={changeEditMode}
           changeNormalMode={changeNormalMode}
-          />      
+          />    
+          </td>  
       </tr>
     )
   }

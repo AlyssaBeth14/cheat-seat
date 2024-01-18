@@ -1,15 +1,14 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button'
 
 const AddStudent = (props) => {
 
 const {addStudent} = props
 
   return (
-    <tr>
-      <td>
-        <button onClick={addStudent}>Add Student</button>
-        </td>
-    </tr>
+      <div>
+        <Button onClick={addStudent} variant='light'>Add Student</Button>
+     </div>
   )
 }
 

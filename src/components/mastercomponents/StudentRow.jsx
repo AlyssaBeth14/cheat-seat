@@ -42,40 +42,54 @@ const {studentId} = initialStudentData
 
     return (
     <tr>
+        <td>
         <StudentId 
         studentId={props.rowNum}
         />
+        </td>
+        <td>
         <StudentName 
         isEditing={editMode}
         value={studentName}
         onNameChange={setStudentName}
         />
+         </td>
+        <td>
         <StudentLevel 
         isEditing={editMode}
         value={historyLevel}
         onLevelChange={setHistoryLevel}
         />
+        </td>
+        <td>
         <StudentLevel 
         isEditing={editMode}
         value={englishLevel}
         onLevelChange={setEnglishLevel}
         />
+        </td>
+        <td>
         <StudentLevel 
         isEditing={editMode}
         value={mathLevel}
         onLevelChange={setMathLevel}
         />
+        </td>
+        <td>
         <StudentLevel 
         isEditing={editMode}
         value={scienceLevel}
         onLevelChange={setScienceLevel}
         />
+        </td>
+        <td>
         <ModeButtons 
         isEditing={editMode}
         changeEditMode={changeEditMode}
         changeNormalMode={changeNormalMode}
         deleteStudent={deleteStudent}
         />
+        </td>
     </tr>
   )
 }
