@@ -35,18 +35,24 @@ const UngroupTwoRow = (props) => {
     
       return (
         <tr>
+          <td>
           <StudentId
           studentId={props.rowNum}
           />
+          </td>
+          <td>
           <StudentName
           value={studentName}
           />
+          </td>
+          <td>
           <Include
            isEditing={editMode}
            value={includedTwo}
            onIncludeChange={setIncludedTwo}
            changeNormalMode={changeNormalMode}
           />
+          </td>
         </tr>
       )
     }

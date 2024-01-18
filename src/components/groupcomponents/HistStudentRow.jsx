@@ -58,7 +58,7 @@ const HistStudentRow = (props) => {
           onLevelChange={setHistoryLevel}
           />  
           </td>
-          <td>    
+          <td style={{width: '25vw'}}>    
           <Notes 
           isEditing={editMode}
           value={historyNotes}

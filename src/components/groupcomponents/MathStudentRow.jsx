@@ -57,7 +57,7 @@ const MathStudentRow = (props) => {
         value={mathLevel}
         onLevelChange={setMathLevel}/>   
         </td>
-        <td>  
+        <td style={{width: '25vw'}}>  
         <Notes 
         isEditing={editMode}
         value={mathNotes}

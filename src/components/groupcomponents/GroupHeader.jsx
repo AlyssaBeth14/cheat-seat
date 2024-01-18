@@ -7,7 +7,7 @@ const GroupHeader = () => {
         <th>#</th>
         <th>Name</th>
         <th>Level</th>
-        <th>Notes</th>
+        <th style={{width: '25vw'}}>Notes</th>
         <th></th>
     </tr>
   )

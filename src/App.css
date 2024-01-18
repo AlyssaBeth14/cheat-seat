@@ -1,12 +1,14 @@
-body {
-  background-color: green;
-}
+/* body {
+  
+} */
 
 table {
   border: 1px solid black;
   border-radius: 10px;
-  border-spacing: 0;
-  border-collapse: separate;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 table tbody {
@@ -18,18 +20,18 @@ table tbody {
 .header {
   height: 20px;
   background-color: #ae4dc4;
-  font-size:x-large;
+  font-size:xx-large;
   padding: 5px;
 }
 
 th, td {
-  padding: 10px
+  padding: 10px;
 }
 
 tr, td {
   padding: 10px;
   border: 1px solid black;
-  font-size: medium;
+  font-size: large;
   font-weight: 750;
   text-align: center;
 }
@@ -41,4 +43,10 @@ tr, td {
 
 tr {
   text-align: center;
+}
+
+.scrolldown {
+  height: 50px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

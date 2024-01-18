@@ -65,7 +65,7 @@ const MasterListDisplay = (props) => {
       <thead>
         <MasterListHeader />
      </thead>
-     <tbody>
+     <tbody className='scrolldown'>
       {students}
       {/* {notes && <Notes />}
       <button onClick={showNotes}>toggle</button> */}

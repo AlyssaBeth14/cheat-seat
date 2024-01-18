@@ -4,9 +4,9 @@ import Button from 'react-bootstrap/Button'
 const GenerateSeatingChartButton = () => {
   return (
     
-    <div style={{textAlign: 'center', }}>
+    <div style={{textAlign: 'center'}}>
       <br/>
-      <Button variant='light'>Generate Seating Chart</Button>
+      <Button variant='light' style={{fontWeight: '750'}}>Generate Seating Chart</Button>
     </div>
   )
 }

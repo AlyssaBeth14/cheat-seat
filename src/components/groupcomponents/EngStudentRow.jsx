@@ -58,7 +58,7 @@ const EngStudentRow = (props) => {
         onLevelChange={setEnglishLevel}
         />  
         </td>
-        <td>    
+        <td style={{width: '25vw'}}>    
         <Notes 
         isEditing={editMode}
         value={englishNotes}
