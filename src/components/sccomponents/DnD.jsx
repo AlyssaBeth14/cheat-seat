@@ -58,7 +58,7 @@ const DnD = (props) => {
     }
 
     return (
-        <div className='container' style={{padding: '20px'}}>
+        <div className='container' style={{marginTop: '20px'}}>
             <div class='selectbox' style={{width: '150px', border: '7px solid white', textAlign: 'center', padding: '20px', backgroundColor: '#deacde', borderRadius: '10px', color: '#3b3b3b', float: 'left'}}>
             <h3 style={{fontWeight: '750'}}>SELECT:</h3>
     
@@ -77,7 +77,7 @@ const DnD = (props) => {
             </div>
             </div>
 
-            <div className='container' style={{marginRight: 'auto', marginLeft: 'auto', width: '90vw',  height: '75vh', backgroundColor: 'mintcream', border: '10px solid #ae4dc4', borderRadius: '25px'}} id='designbox'>
+            <div className='container' style={{marginRight: 'auto', marginLeft: 'auto', width: '90vw',  height: '65vh', backgroundColor: 'mintcream', border: '10px solid #ae4dc4', borderRadius: '25px'}} id='designbox'>
 
                 {myArr}
             </div>
